@@ -166,9 +166,9 @@ X = poly_regressor.fit_transform(X)
 from sklearn.model_selection import train_test_split
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.13, random_state = 420)
 
-#fitting the Logistic Regression
+#fitting the Logistic Regression and hyperparameter tuning.
 from sklearn.linear_model import LogisticRegression
-regressor = LogisticRegression(solver = 'liblinear')
+regressor = LogisticRegression(C = 10, solver = 'liblinear')
 regressor.fit(X_train, Y_train.ravel())
 
 #predicting values.
